@@ -1,0 +1,30 @@
+<h1>Nuestros automotores</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Modelo</th>
+            <th>Año</th>
+            <th>Kilometros</th>
+            <th>Consumo</th>
+            <th>Foto</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{automotor.modelo}}</td>
+            <td>{{automotor.anio}}</td>
+            <td>{{automotor.kms}}</td>
+            <td>{{automotor.consumo}}</td>
+            <td><img class="foto" src="{{automotor.image}}" alt="{{automotor.modelo}}"></td>
+            <td><button>Me interesa</button></td>
+        </tr>
+        <tr>
+            <td>VW Gol</td>
+            <td>2012</td>
+            <td>45.000km</td>
+            <td>10.9l/100km</td>
+            <td><img class="foto" src="{{automotor.image}}" alt="{{automotor.modelo}}"></td>
+            <td><button>Me interesa</button></td>
+        </tr>
+    </tbody>
+</table>
