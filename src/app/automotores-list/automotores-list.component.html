@@ -4,27 +4,22 @@
         <tr>
             <th>Modelo</th>
             <th>Año</th>
-            <th>Kilometros</th>
-            <th>Consumo</th>
+            <th>Kilometros (km)</th>
+            <th>Consumo (l/100km)</th>
+            <th>Disponibilidad</th>
             <th>Foto</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>{{automotor.modelo}}</td>
-            <td>{{automotor.anio}}</td>
-            <td>{{automotor.kms}}</td>
-            <td>{{automotor.consumo}}</td>
-            <td><img class="foto" src="{{automotor.image}}" alt="{{automotor.modelo}}"></td>
-            <td><button>Me interesa</button></td>
-        </tr>
-        <tr>
-            <td>VW Gol</td>
-            <td>2012</td>
-            <td>45.000km</td>
-            <td>10.9l/100km</td>
-            <td><img class="foto" src="{{automotor.image}}" alt="{{automotor.modelo}}"></td>
-            <td><button>Me interesa</button></td>
+        <tr *ngFor="let Automotor of automotores">
+            <td>{{Automotor.modelo}}</td>
+            <td>{{Automotor.anio}}</td>
+            <td>{{Automotor.kms}}</td>
+            <td>{{Automotor.consumo}}</td>
+            <td class="badge badge-primary" *ngIf="Automotor.disp==true">Disponible</td>
+            <td class="badge badge-warning" *ngIf="Automotor.disp==false">Señado</td>
+            <td><img class="foto" src="{{Automotor.image}}" alt="{{Automotor.modelo}}"></td>
+            <td *ngIf="Automotor.disp==true"><button>Me interesa</button></td>
         </tr>
     </tbody>
 </table>
