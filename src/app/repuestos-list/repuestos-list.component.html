@@ -16,13 +16,9 @@
             <td class="badge badge-primary" *ngIf="Repuesto.disp==true">Disponible</td>
             <td class="badge badge-warning" *ngIf="Repuesto.disp==false">Sin stock</td>
             <td>
-                <div class="input-cant">
-                    <button class="btn btn-primary btn-sm" (click)="downCant(Repuesto)">-</button>
-                    <input type="text" (keyup)="changeCant($event, Repuesto)" [(ngModel)]="Repuesto.cantidad">
-                    <button class="btn btn-primary btn-sm" (click)="upCant(Repuesto)">+</button>
-                </div>
+                <app-input-stock [(quantity)]="Repuesto.cantidad" [maxCant]="Repuesto.stock" *ngIf="Repuesto.stock"></app-input-stock>
             </td>
-            <td><img class="foto" src="{{Repuesto.image}}" alt="{{Repuesto.modelo}}"></td>
+            <td><img class="foto" src="{{Repuesto.image}}" alt="{{Repuesto.nombre}}"></td>
             <td *ngIf="Repuesto.disp==true"><button>Me interesa</button></td>
         </tr>
     </tbody>

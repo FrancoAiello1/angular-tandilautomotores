@@ -32,19 +32,4 @@ export class RepuestosListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  downCant(Repuesto: Repuesto): void {
-    if (Repuesto.cantidad > 0)
-      Repuesto.cantidad--;
-  }
-
-  upCant(Repuesto: Repuesto): void {
-    if (Repuesto.cantidad < Repuesto.stock)
-      Repuesto.cantidad++;
-  }
-
-  changeCant(event, Repuesto: Repuesto): void{
-    if (event.code > Repuesto.stock)
-      event.preventDefault();
-  }
 }

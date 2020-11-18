@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { TandilautomotoresAboutComponent } from './tandilautomotores-about/tandilautomotores-about.component';
 import { TandilautomotoresRepuestosComponent } from './tandilautomotores-repuestos/tandilautomotores-repuestos.component';
 import { CartListComponent } from './cart-list/cart-list.component';
+import { InputStockComponent } from './input-stock/input-stock.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CartListComponent } from './cart-list/cart-list.component';
     RepuestosListComponent,
     TandilautomotoresAboutComponent,
     TandilautomotoresRepuestosComponent,
-    CartListComponent
+    CartListComponent,
+    InputStockComponent
   ],
   imports: [
     BrowserModule,
