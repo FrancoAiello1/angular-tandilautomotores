@@ -13,13 +13,13 @@
         <tr *ngFor="let Repuesto of repuestos">
             <td>{{Repuesto.nombre}}</td>
             <td>{{Repuesto.condicion}}</td>
-            <td class="badge badge-primary" *ngIf="Repuesto.disp==true">Disponible</td>
-            <td class="badge badge-warning" *ngIf="Repuesto.disp==false">Sin stock</td>
+            <td class="badge badge-primary" *ngIf="Repuesto.stock>0">Disponible</td>
+            <td class="badge badge-warning" *ngIf="Repuesto.stock==0">Sin stock</td>
             <td>
                 <app-input-stock [(quantity)]="Repuesto.cantidad" [maxCant]="Repuesto.stock" *ngIf="Repuesto.stock"></app-input-stock>
             </td>
             <td><img class="foto" src="{{Repuesto.image}}" alt="{{Repuesto.nombre}}"></td>
-            <td *ngIf="Repuesto.disp==true"><button>Me interesa</button></td>
+            <td *ngIf="Repuesto.disp==true"><button class="btn btn-primary" (click)="addToCart(Repuesto)">Comprar</button></td>
         </tr>
     </tbody>
 </table>

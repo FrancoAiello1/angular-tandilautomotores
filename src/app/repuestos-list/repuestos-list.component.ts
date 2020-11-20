@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵinitServicesIfNeeded } from '@angular/core';
+import { RepuestosCartService } from '../repuestos-cart.service';
 import { Repuesto } from './repuesto';
 
 @Component({
@@ -24,12 +25,21 @@ export class RepuestosListComponent implements OnInit {
       disp: false,
       cantidad: 0,
       stock: 0,
-      image: "assets/img/bobinaEncendido.jpg"
+      image: "assets/img/cableBujia.jpg"
     },
   ]
+  
 
-  constructor() { }
+  constructor(private cart: RepuestosCartService) {
+   }
 
   ngOnInit(): void {
   }
+
+  addToCart(Repuesto): void{
+    this.cart.addToCart(Repuesto);
+    Repuesto.stock -= Repuesto.cantidad;
+    Repuesto.cantidad=0;
+  }
+
 }
