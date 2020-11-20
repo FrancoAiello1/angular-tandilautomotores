@@ -26,6 +26,13 @@ export class RepuestosListComponent implements OnInit {
       cantidad: 0,
       stock: 0,
       image: "assets/img/cableBujia.jpg"
+    },   {
+      nombre: "Juego de bujias",
+      condicion: "Nuevo",
+      disp: true,
+      cantidad: 0,
+      stock: 11,
+      image: "assets/img/bujias.jpg"
     },
   ]
   
